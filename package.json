@@ -1,0 +1,20 @@
+{
+  "name": "cordova-plugin-cola",
+  "version": "1.0.0",
+  "description": "Cola VPN",
+  "cordova": {
+    "id": "cordova-plugin-cola",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "cola",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}

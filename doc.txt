@@ -1,0 +1,43 @@
+cola.connect("Cola",JSON.stringify({
+    "flags": "21022330",
+    "cidr": "10.6.0.1/16",
+    "dns": "114.114.114.114",
+    "servers": ["tls://www.apple.com@47.244.35.218:443,cc20://password@47.244.35.218:5678"],
+    "vnet": 0,
+    "fnet": 0,
+    "mtu": 1430
+})
+
+cola.disconnect(function(){
+    console.log('disconnect done');
+});
+
+cola.onStatus(function(status){
+    console.log(status);
+});
+
+cola.getStatus(function(status){
+    console.log(status);
+});
+
+cordova create myvpn com.cola.myvpn MyVPN
+cordova platform add ios android
+cordova plugin add ../cordova-plugin-cola
+
+<button id="connect" style="width: 200px;height: 100px;">连接</button>
+<button id="disconnect" style="width: 200px;height: 100px;">断开</button>
+
+document.getElementById("connect").addEventListener("click",function(){
+    cola.connect("Cola",JSON.stringify({
+        "flags": "21022330",
+        "cidr": "10.6.0.1/16",
+        "dns": "114.114.114.114",
+        "servers": ["tls://www.apple.com@47.244.35.218:443,cc20://password@47.244.35.218:5678"],
+        "vnet": 0,
+        "fnet": 0,
+        "mtu": 1430
+    }));
+});
+document.getElementById("disconnect").addEventListener("click",function(){
+    cola.disconnect()
+});

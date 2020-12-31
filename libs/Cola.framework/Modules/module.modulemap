@@ -1,0 +1,8 @@
+framework module "Cola" {
+	header "ref.h"
+    header "Cola.objc.h"
+    header "Universe.objc.h"
+    header "Cola.h"
+
+    export *
+}
